@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shree Air Cons - Professional appliance repair service in Chennai">
+    <meta name="keywords" content="AC repair, refrigerator repair, washing machine repair, Chennai">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Air Cons - Home Appliance Repair Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Sticky Action Buttons -->
+    <div class="sticky-buttons">
+        <button class="call-btn" title="Call us" onclick="window.location.href='tel:6369529001'">
+            <i class="fas fa-phone"></i>
+        </button>
+        <button class="whatsapp-btn" title="WhatsApp" onclick="window.location.href='https://wa.me/916369529001?text=I%20want%20to%20book%20a%20service'">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="/images/sac-logo.png" alt="SAC Logo" style="width: 40px; height: 40px;">
+                <span>Shree Air Cons</span>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/booking">Booking</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/reviews">Reviews</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="language-switcher" id="langBtn" onclick="toggleLanguage()">EN / TA</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="heroTitle">Professional Appliance Repair Services</h1>
+            <p id="heroSubtitle">Expert technicians for AC, Refrigerator, and Washing Machine repairs in Chennai</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="window.location.href='/booking'" id="bookBtn">Book Service</button>
+                <button class="btn-secondary" onclick="window.location.href='tel:6369529001'" id="callBtn">Call Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services Preview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" id="servicesTitle">Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1: AC Repair -->
+                <div class="service-card">
+                    <img src="/images/ac-repair.jpg" alt="AC Repair Service">
+                    <div class="service-card-content">
+                        <h3 id="ac-title">AC Repair & Service</h3>
+                        <p id="ac-desc">Professional AC maintenance, repair, and servicing for all major brands. Quick response time and affordable pricing.</p>
+                        <button class="service-btn" onclick="window.location.href='/booking'" id="ac-btn">Book AC Service</button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Refrigerator -->
+                <div class="service-card">
+                    <img src="/images/ref-repair.jpg" alt="Refrigerator Repair">
+                    <div class="service-card-content">
+                        <h3 id="ref-title">Refrigerator Repair & Service</h3>
+                        <p id="ref-desc">Expert repair and maintenance for all refrigerator models. Same-day service available for most issues.</p>
+                        <button class="service-btn" onclick="window.location.href='/booking'" id="ref-btn">Book Refrigerator Service</button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Washing Machine -->
+                <div class="service-card">
+                    <img src="/images/wm-repair.jpg" alt="Washing Machine Repair">
+                    <div class="service-card-content">
+                        <h3 id="wm-title">Washing Machine Repair & Service</h3>
+                        <p id="wm-desc">Complete repair and maintenance services for all washing machine types. Experienced technicians with genuine spare parts.</p>
+                        <button class="service-btn" onclick="window.location.href='/booking'" id="wm-btn">Book Washing Machine Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title" id="whyTitle">Why Choose Us</h2>
+            <div class="services-grid">
+                <div style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <i class="fas fa-award" style="font-size: 40px; color: #1e5ba8; margin-bottom: 15px;"></i>
+                    <h3 style="color: #1e5ba8;">Certified Technicians</h3>
+                    <p id="cert-text">Highly trained and certified professionals with years of experience</p>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <i class="fas fa-clock" style="font-size: 40px; color: #1e5ba8; margin-bottom: 15px;"></i>
+                    <h3 style="color: #1e5ba8;">Quick Response</h3>
+                    <p id="quick-text">Same-day or next-day service available in most areas</p>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <i class="fas fa-wallet" style="font-size: 40px; color: #1e5ba8; margin-bottom: 15px;"></i>
+                    <h3 style="color: #1e5ba8;">Affordable Pricing</h3>
+                    <p id="afford-text">Transparent pricing with no hidden charges</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Preview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" id="reviewTitle">Customer Reviews</h2>
+            <div id="reviewsPreview" class="reviews-container"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 id="footerCompany">About Shree Air Cons</h4>
+                    <p id="footerAbout">Professional home appliance repair service provider in Chennai. We provide reliable and affordable repair services for AC, Refrigerator, and Washing Machines.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footerServices">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services" id="footerAC">AC Repair & Service</a></li>
+                        <li><a href="/services" id="footerRef">Refrigerator Repair</a></li>
+                        <li><a href="/services" id="footerWM">Washing Machine Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footerContact">Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 6369529001 / 9342017154</p>
+                    <p><i class="fas fa-envelope"></i> shreeaircons2026@gmail.com</p>
+                    <p id="footerRadius"><i class="fas fa-map-marker-alt"></i> Service within 65 km radius</p>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footerFollow">Follow Us</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #ffc107; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #ffc107; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #ffc107; font-size: 20px;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footerCopyright">&copy; 2026 Shree Air Cons. All rights reserved. | Terms & Conditions | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                heroTitle: 'Professional Appliance Repair Services',
+                heroSubtitle: 'Expert technicians for AC, Refrigerator, and Washing Machine repairs in Chennai',
+                bookBtn: 'Book Service',
+                callBtn: 'Call Now',
+                servicesTitle: 'Our Services',
+                'ac-title': 'AC Repair & Service',
+                'ac-desc': 'Professional AC maintenance, repair, and servicing for all major brands. Quick response time and affordable pricing.',
+                'ac-btn': 'Book AC Service',
+                'ref-title': 'Refrigerator Repair & Service',
+                'ref-desc': 'Expert repair and maintenance for all refrigerator models. Same-day service available for most issues.',
+                'ref-btn': 'Book Refrigerator Service',
+                'wm-title': 'Washing Machine Repair & Service',
+                'wm-desc': 'Complete repair and maintenance services for all washing machine types. Experienced technicians with genuine spare parts.',
+                'wm-btn': 'Book Washing Machine Service',
+                whyTitle: 'Why Choose Us',
+                'cert-text': 'Highly trained and certified professionals with years of experience',
+                'quick-text': 'Same-day or next-day service available in most areas',
+                'afford-text': 'Transparent pricing with no hidden charges',
+                reviewTitle: 'Customer Reviews',
+                footerCompany: 'About Shree Air Cons',
+                footerAbout: 'Professional home appliance repair service provider in Chennai. We provide reliable and affordable repair services for AC, Refrigerator, and Washing Machines.',
+                footerServices: 'Services',
+                footerAC: 'AC Repair & Service',
+                footerRef: 'Refrigerator Repair',
+                footerWM: 'Washing Machine Repair',
+                footerContact: 'Contact Info',
+                footerRadius: 'Service within 65 km radius',
+                footerFollow: 'Follow Us',
+                footerCopyright: '© 2026 Shree Air Cons. All rights reserved. | Terms & Conditions | Privacy Policy'
+            },
+            ta: {
+                heroTitle: 'தொழில்முறை பயனாளி பழுதுசெய்தல் சேவைகள்',
+                heroSubtitle: 'சென்னையில் AC, குளிர்பதன நிலையம் மற்றும் உழைக்கும் இயந்திர பழுதுசெய்தலுக்கான நிபுணர் தொழில்நுணுபிகள்',
+                bookBtn: 'சேவை முன்பதிவு செய்யுங்கள்',
+                callBtn: 'இப்போது அழைக்கவும்',
+                servicesTitle: 'எமது சேவைகள்',
+                'ac-title': 'AC பழுதுசெய்தல் மற்றும் சேவை',
+                'ac-desc': 'அனைத்து முக்கிய ब్র్र‍ండ்களுக்கான전문 AC பராமரிப்பு, பழுதுசெய்தல் மற்றும் சேவை। விரைவான பதிலளிப்பு நேரம் மற்றும் மலிவான விலை.',
+                'ac-btn': 'AC சேவையை முன்பதிவு செய்யுங்கள்',
+                'ref-title': 'குளிர்பதன நிலையம் பழுதுசெய்தல் மற்றும் சேவை',
+                'ref-desc': 'அனைத்து குளிர்பதன நிலையம் மாதிரிக்கான நிபுணர் பழுதுசெய்தல் மற்றும் பராமரிப்பு। பெரும்பாலான பிரச்சினைகளுக்கு அதே நாள் சேவை கிடைக்கிறது.',
+                'ref-btn': 'குளிர்பதன நிலையம் சேவையை முன்பதிவு செய்யுங்கள்',
+                'wm-title': 'உழைக்கும் இயந்திரம் பழுதுசெய்தல் மற்றும் சேவை',
+                'wm-desc': 'அனைத்து உழைக்கும் இயந்திர வகைகளுக்கான முழுமையான பழுதுசெய்தல் மற்றும் பராமரிப்பு சேவைகள். உண்மையான இணைக்கப்பட்ட பாகங்கள் கொண்ட அভিজ்ஞ தொழில்நுணுபिகள்.',
+                'wm-btn': 'உழைக்கும் இயந்திர சேவையை முன்பதிவு செய்யுங்கள்',
+                whyTitle: 'நம்மை ஏன் தேர்ந்தெடுக்க வேண்டும்',
+                'cert-text': 'பல வருட அனுபவம் கொண்ட உচ்च பயிற்சி மற்றும் சான்றிதமான தொழில்நுணுபிகள்',
+                'quick-text': 'பெரும்பாலான பகுதிகளில் அதே நாள் அல்லது அடுத்த நாள் சேவை கிடைக்கிறது',
+                'afford-text': 'இரகசிய கட்டணம் இல்லாமல் வெளிப்படையான விலை',
+                reviewTitle: 'வாடிக்கையாளர் மதிப்புரைகள்',
+                footerCompany: 'Shree Air Cons பற்றி',
+                footerAbout: 'சென்னையில் தொழில்முறை குறிக்கோள் மூலிகை பயனாளி பழுதுசெய்தல் சেவை வழங்குநர். AC, குளிர்பதன நிலையம் மற்றும் உழைக்கும் இயந்திரங்களுக்கான நம்பகமான மற்றும் மலிவான பழுதுசெய்தல் சேவைகளை வழங்குகிறோம்.',
+                footerServices: 'சேவைகள்',
+                footerAC: 'AC பழுதுசெய்தல் மற்றும் சேவை',
+                footerRef: 'குளிர்பதன நிலையம் பழுதுசெய்தல்',
+                footerWM: 'உழைக்கும் இயந்திர பழுதுசெய்தல்',
+                footerContact: 'தொடர்பு தகவல்',
+                footerRadius: '65 கி.மீ. விட்டத்திற்குள் சேவை',
+                footerFollow: 'எம்மன்னை பின்பற்றுங்கள்',
+                footerCopyright: '© 2026 Shree Air Cons. அனைத்து உரிமைகள் உபயோगித்தல். | விதிமுறைகள் மற்றும் நிபந்தனைகள் | தனியுரிமை கொள்கை'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ta' : 'en';
+            document.getElementById('langBtn').textContent = currentLang === 'en' ? 'EN / TA' : 'TA / EN';
+            updateLanguage();
+        }
+
+        function updateLanguage() {
+            const trans = translations[currentLang];
+            Object.keys(trans).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = trans[key];
+                }
+            });
+        }
+
+        // Load reviews on page load
+        function loadReviews() {
+            fetch('/api/reviews/approved')
+                .then(response => response.json())
+                .then(reviews => {
+                    const reviewsContainer = document.getElementById('reviewsPreview');
+                    reviewsContainer.innerHTML = '';
+                    
+                    if (reviews.length === 0) {
+                        reviewsContainer.innerHTML = '<p style="text-align: center; color: #666;">No reviews yet. Be the first to review us!</p>';
+                        return;
+                    }
+                    
+                    reviews.slice(0, 3).forEach(review => {
+                        const reviewCard = document.createElement('div');
+                        reviewCard.className = 'review-card';
+                        const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+                        reviewCard.innerHTML = `
+                            <div class="review-header">
+                                <span class="reviewer-name">${review.customerName}</span>
+                                <span class="rating">${stars}</span>
+                            </div>
+                            <p class="review-text">"${review.reviewText}"</p>
+                            <small>Service: ${review.serviceType}</small>
+                        `;
+                        reviewsContainer.appendChild(reviewCard);
+                    });
+                })
+                .catch(error => console.error('Error loading reviews:', error));
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', loadReviews);
+    </script>
+</body>
+</html>

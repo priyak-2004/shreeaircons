@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Shree Air Cons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Sticky Action Buttons -->
+    <div class="sticky-buttons">
+        <button class="call-btn" onclick="window.location.href='tel:6369529001'">
+            <i class="fas fa-phone"></i>
+        </button>
+        <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/916369529001'">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="/images/sac-logo.png" alt="SAC Logo" style="width: 40px; height: 40px;">
+                <span>Shree Air Cons</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/booking">Booking</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/reviews">Reviews</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="language-switcher">EN / TA</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Work Gallery</h1>
+            <p>View our recent service projects and completed work</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div style="margin-bottom: 30px;">
+                <button class="service-btn" style="width: auto; background-color: #1e5ba8; color: white;" onclick="filterGallery('AC')" id="filterAC">AC Repairs</button>
+                <button class="service-btn" style="width: auto; background-color: #2d7ec7; color: white; margin-left: 10px;" onclick="filterGallery('Refrigerator')" id="filterRef">Refrigerator</button>
+                <button class="service-btn" style="width: auto; background-color: #2d7ec7; color: white; margin-left: 10px;" onclick="filterGallery('Washing Machine')" id="filterWM">Washing Machines</button>
+                <button class="service-btn" style="width: auto; background-color: #2d7ec7; color: white; margin-left: 10px;" onclick="filterGallery('all')" id="filterAll">All</button>
+            </div>
+
+            <div id="galleryContainer" class="gallery-grid">
+                <!-- Gallery items will be loaded here -->
+                <div style="text-align: center; grid-column: 1/-1; padding: 40px; color: #666;">
+                    <p>Loading gallery...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Shree Air Cons</h4>
+                    <p>Professional home appliance repair service provider in Chennai.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/booking">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 6369529001 / 9342017154</p>
+                    <p><i class="fas fa-envelope"></i> shreeaircons2026@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let allImages = [];
+        let currentFilter = 'all';
+
+        function loadGallery() {
+            fetch('/api/gallery')
+                .then(response => response.json())
+                .then(images => {
+                    allImages = images;
+                    displayGallery(allImages);
+                })
+                .catch(error => {
+                    document.getElementById('galleryContainer').innerHTML = '<div style="text-align: center; grid-column: 1/-1; color: #666;">No images found in gallery</div>';
+                });
+        }
+
+        function displayGallery(images) {
+            const container = document.getElementById('galleryContainer');
+            
+            if (images.length === 0) {
+                container.innerHTML = '<div style="text-align: center; grid-column: 1/-1; color: #666;">No images found</div>';
+                return;
+            }
+
+            container.innerHTML = images.map(img => `
+                <div class="gallery-item">
+                    <img src="${img.imageUrl}" alt="${img.imageDescription || img.serviceType}">
+                    <div class="gallery-overlay">
+                        <div style="text-align: center;">
+                            <p style="font-weight: bold; margin-bottom: 10px;">${img.serviceType}</p>
+                            <p style="font-size: 12px;">${img.imageType ? '(' + img.imageType + ')' : ''}</p>
+                            ${img.imageDescription ? `<p style="font-size: 11px;">${img.imageDescription}</p>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterGallery(serviceType) {
+            currentFilter = serviceType;
+            
+            // Update button styles
+            document.getElementById('filterAC').style.backgroundColor = serviceType === 'AC' ? '#1e5ba8' : '#2d7ec7';
+            document.getElementById('filterRef').style.backgroundColor = serviceType === 'Refrigerator' ? '#1e5ba8' : '#2d7ec7';
+            document.getElementById('filterWM').style.backgroundColor = serviceType === 'Washing Machine' ? '#1e5ba8' : '#2d7ec7';
+            document.getElementById('filterAll').style.backgroundColor = serviceType === 'all' ? '#1e5ba8' : '#2d7ec7';
+
+            if (serviceType === 'all') {
+                displayGallery(allImages);
+            } else {
+                const filtered = allImages.filter(img => img.serviceType === serviceType);
+                displayGallery(filtered);
+            }
+        }
+
+        // Load gallery on page load
+        window.addEventListener('load', loadGallery);
+    </script>
+</body>
+</html>

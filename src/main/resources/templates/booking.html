@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Service - Shree Air Cons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Sticky Action Buttons -->
+    <div class="sticky-buttons">
+        <button class="call-btn" onclick="window.location.href='tel:6369529001'">
+            <i class="fas fa-phone"></i>
+        </button>
+        <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/916369529001?text=I%20want%20to%20book%20a%20service'">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="/images/sac-logo.png" alt="SAC Logo" style="width: 40px; height: 40px;">
+                <span>Shree Air Cons</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/booking">Booking</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/reviews">Reviews</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="language-switcher" id="langBtn" onclick="toggleLanguage()">EN / TA</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="pageTitle">Book Your Service</h1>
+            <p id="pageSubtitle">Fill out the form below and we'll contact you soon</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section">
+        <div class="container">
+            <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+                <h2 style="color: #1e5ba8; margin-bottom: 30px; text-align: center;" id="formTitle">Service Request Form</h2>
+                
+                <div id="successMessage"></div>
+                <div id="errorMessage"></div>
+
+                <div class="form-group">
+                    <label for="customerName" id="nameLabel">Full Name</label>
+                    <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber" id="phoneLabel">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="10-digit mobile number" pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="repairType" id="serviceLabel">Type of Service Required</label>
+                    <select id="repairType" name="repairType" required>
+                        <option value="">Select a service</option>
+                        <option value="AC">AC Repair & Service</option>
+                        <option value="Refrigerator">Refrigerator Repair & Service</option>
+                        <option value="Washing Machine">Washing Machine Repair & Service</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="address" id="addressLabel">Service Address</label>
+                    <input type="text" id="address" name="address" required placeholder="Enter complete service address">
+                </div>
+
+                <div class="form-group">
+                    <label for="problemDescription" id="problemLabel">Describe Your Problem</label>
+                    <textarea id="problemDescription" name="problemDescription" required placeholder="Please describe the issue in detail..." minlength="10"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Booking Request</button>
+            </form>
+
+            <!-- Booking Status Section -->
+            <div style="margin-top: 60px;">
+                <h2 class="section-title" id="checkStatusTitle">Check Booking Status</h2>
+                <div style="max-width: 400px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div class="form-group">
+                        <label for="statusPhone" id="statusPhoneLabel">Phone Number</label>
+                        <input type="tel" id="statusPhone" placeholder="Enter your 10-digit number" pattern="[0-9]{10}">
+                    </div>
+                    <button onclick="checkStatus()" style="background-color: #1e5ba8; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-weight: 600;" id="checkBtn">Check Status</button>
+                </div>
+                <div id="statusResult" style="margin-top: 30px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Shree Air Cons</h4>
+                    <p>Professional home appliance repair service provider in Chennai.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 6369529001 / 9342017154</p>
+                    <p><i class="fas fa-envelope"></i> shreeaircons2026@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                pageTitle: 'Book Your Service',
+                pageSubtitle: 'Fill out the form below and we\'ll contact you soon',
+                formTitle: 'Service Request Form',
+                nameLabel: 'Full Name',
+                phoneLabel: 'Phone Number',
+                serviceLabel: 'Type of Service Required',
+                addressLabel: 'Service Address',
+                problemLabel: 'Describe Your Problem',
+                submitBtn: 'Submit Booking Request',
+                checkStatusTitle: 'Check Booking Status',
+                statusPhoneLabel: 'Phone Number',
+                checkBtn: 'Check Status'
+            },
+            ta: {
+                pageTitle: 'உங்கள் சேவையை முன்பதிவு செய்யுங்கள்',
+                pageSubtitle: 'கீழே உள்ள படிவத்தை நிரப்பி, மேலும் தகவலைப் பெறுவோம்',
+                formTitle: 'சேவை요청 படிவம்',
+                nameLabel: 'முழு பெயர்',
+                phoneLabel: 'தொலைபேசி எண்',
+                serviceLabel: 'தேவைப்பட்ட சேவையின் வகை',
+                addressLabel: 'சேவை முகவரி',
+                problemLabel: 'உங்கள் சிக்கலை விளக்குங்கள்',
+                submitBtn: 'முன்பதிவு요청ஐ சமர்பிக்கவும்',
+                checkStatusTitle: 'முன்பதிவு நிலையை சரிபார்க்கவும்',
+                statusPhoneLabel: 'தொலைபேசி எண்',
+                checkBtn: 'நிலையை சரிபார்க்கவும்'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ta' : 'en';
+            document.getElementById('langBtn').textContent = currentLang === 'en' ? 'EN / TA' : 'TA / EN';
+            updateLanguage();
+        }
+
+        function updateLanguage() {
+            const trans = translations[currentLang];
+            Object.keys(trans).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = trans[key];
+                }
+            });
+        }
+
+        function submitBooking(event) {
+            event.preventDefault();
+            
+            const successDiv = document.getElementById('successMessage');
+            const errorDiv = document.getElementById('errorMessage');
+            successDiv.innerHTML = '';
+            errorDiv.innerHTML = '';
+
+            const booking = {
+                customerName: document.getElementById('customerName').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                repairType: document.getElementById('repairType').value,
+                address: document.getElementById('address').value,
+                problemDescription: document.getElementById('problemDescription').value,
+                status: 'PENDING'
+            };
+
+            fetch('/api/bookings', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(booking)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    successDiv.innerHTML = `<div class="success-message">
+                        <i class="fas fa-check-circle"></i> ${currentLang === 'en' ? 'Booking submitted successfully! We will contact you soon.' : 'முன்பதிவு வெற்றிகரமாக சமர்பிக்கப்பட்டுள்ளது! விரைவில் உங்களைத் தொடர்பு கொள்வோம்'}
+                    </div>`;
+                    document.getElementById('bookingForm').reset();
+                } else {
+                    errorDiv.innerHTML = `<div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i> Error: ${data.message}
+                    </div>`;
+                }
+            })
+            .catch(error => {
+                errorDiv.innerHTML = `<div class="error-message">
+                    <i class="fas fa-exclamation-circle"></i> ${currentLang === 'en' ? 'Error submitting booking' : 'முன்பதிவை சமர்பிக்கும் போது பிழை'}: ${error.message}
+                </div>`;
+            });
+        }
+
+        function checkStatus() {
+            const phone = document.getElementById('statusPhone').value;
+            const resultDiv = document.getElementById('statusResult');
+            resultDiv.innerHTML = '';
+
+            if (!phone) {
+                resultDiv.innerHTML = `<div class="error-message">${currentLang === 'en' ? 'Please enter your phone number' : 'உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்'}</div>`;
+                return;
+            }
+
+            fetch(`/api/bookings/phone/${phone}`)
+                .then(response => response.json())
+                .then(bookings => {
+                    if (bookings.length === 0) {
+                        resultDiv.innerHTML = `<div class="error-message">${currentLang === 'en' ? 'No bookings found for this phone number' : 'இந்த தொலைபேசி எண்ணுக்கான முன்பதிவு எதுவும் கிடைக்கவில்லை'}</div>`;
+                        return;
+                    }
+
+                    let html = '<div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">';
+                    bookings.forEach(booking => {
+                        let statusColor = 'status-pending';
+                        if (booking.status === 'CONFIRMED') statusColor = 'status-confirmed';
+                        if (booking.status === 'COMPLETED') statusColor = 'status-completed';
+
+                        html += `<div style="padding: 20px; border-bottom: 1px solid #ddd;">
+                            <h3 style="color: #1e5ba8; margin-bottom: 15px;">Booking #${booking.id}</h3>
+                            <p><strong>Service:</strong> ${booking.repairType}</p>
+                            <p><strong>Status:</strong> <span class="status-badge ${statusColor}">${booking.status}</span></p>
+                            ${booking.serviceDate ? `<p><strong>Service Date:</strong> ${new Date(booking.serviceDate).toLocaleDateString()}</p>` : ''}
+                            ${booking.serviceTime ? `<p><strong>Service Time:</strong> ${booking.serviceTime}</p>` : ''}
+                            ${booking.notes ? `<p><strong>Notes:</strong> ${booking.notes}</p>` : ''}
+                        </div>`;
+                    });
+                    html += '</div>';
+                    resultDiv.innerHTML = html;
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = `<div class="error-message">${currentLang === 'en' ? 'Error checking status' : 'நிலையை சரிபார்க்கும் போது பிழை'}</div>`;
+                });
+        }
+    </script>
+</body>
+</html>
