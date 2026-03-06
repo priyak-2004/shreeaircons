@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Us - Shree Air Cons - Book your service appointment">
+    <title>Contact Us - Shree Air Cons</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ============================================ 
+         HEADER & NAVIGATION
+         ============================================ -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-section">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Shree Air Cons Logo" class="logo-icon">
+            </a>
+            <span class="company-name">SAC</span>
+         </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            
+        </nav>
+    </header>
+
+    <!-- ============================================ 
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" style="min-height: 60vh; padding: 3rem 2rem;">
+        <h1 style="color: white;">Contact Us</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-top: 1rem;">Get in Touch & Book Your Service</p>
+    </section>
+
+    <!-- ============================================ 
+         CONTACT SECTION
+         ============================================ -->
+    <section>
+        <h2>Book An Appointment</h2>
+        <p class="subtitle">Fill out the form below and we'll contact you shortly</p>
+
+        <div class="contact-wrapper">
+            <!-- BOOKING FORM -->
+            <div class="booking-form">
+                <form id="bookingForm" onsubmit="submitBooking(event)">
+                    <div class="form-group">
+                        <label for="custName">Customer Name *</label>
+                        <input type="text" id="custName" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custPhone">Phone Number *</label>
+                        <input type="tel" id="custPhone" name="phone" required placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custAddress">Address *</label>
+                        <textarea id="custAddress" name="address" rows="3" required placeholder="Enter your residential address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Service Type *</label>
+                        <select id="serviceType" name="service" required>
+                            <option value="">-- Select Service Type --</option>
+                            <option value="AC">Air Conditioning (AC)</option>
+                            <option value="Washing Machine">Washing Machine</option>
+                            <option value="Refrigerator">Refrigerator</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Service Description (Optional)</label>
+                        <textarea id="description" name="description" rows="3" placeholder="Briefly describe the issue with your appliance..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">📅 Book Service</button>
+                </form>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div class="contact-item-content">
+                        <h4>Phone Numbers</h4>
+                        <p><a href="tel:+916369529001" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">6369529001</a></p>
+                        <p><a href="tel:+919342017154" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">9342017154</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">📧</div>
+                    <div class="contact-item-content">
+                        <h4>Email</h4>
+                        <p><a href="mailto:shreeaircons2026@gmail.com" style="color: var(--primary-blue); text-decoration: none;">shreeaircons2026@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div class="contact-item-content">
+                        <h4>Address</h4>
+                        <p>No 2 Rajiv Gandhi Street, Varadharajapuram, Township Town Panchayat Office, Paadasalai Road, Thirumazhisai, Chennai – 600123</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">🕐</div>
+                    <div class="contact-item-content">
+                        <h4>Service Hours</h4>
+                        <p>Monday - Sunday: 8:00 AM - 10:00 PM</p>
+                        <p style="color: var(--secondary-blue); font-weight: 600;">Available 24/7 for emergencies</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">🗺️</div>
+                    <div class="contact-item-content">
+                        <h4>Service Area</h4>
+                        <p>Service available within a 65 km radius from Chennai</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">💬</div>
+                    <div class="contact-item-content">
+                        <h4>Connect With Us</h4>
+                        <p>
+                            <a href="https://wa.me/916369529001" target="_blank" style="display: inline-block; margin-right: 1rem; color: #25D366; text-decoration: none; font-weight: 600;">WhatsApp</a>
+                            <a href="tel:+916369529001" style="display: inline-block; margin-right: 1rem; color: #FF3B30; text-decoration: none; font-weight: 600;">Call</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         MAP SECTION
+         ============================================ -->
+    <section>
+        <h2>Our Location</h2>
+        <p class="subtitle">Find us on the map</p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.3145670405867!2d79.16869731046039!3d13.072839891321088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526a2c3d3d3d3d%3A0x1234567890abcdef!2sThirumazhisai%2C%20Chennai!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="service-radius">
+            ✓ We provide service within a 65 km radius from Chennai
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         FAQ SECTION
+         ============================================ -->
+    <section style="background: var(--light-gray);">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div style="max-width: 800px; margin: 2rem auto;">
+            <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">❓ What is your service area?</h4>
+                <p style="color: #666; margin-top: 1rem; display: none;">We service Chennai and areas within a 65 km radius. Please contact us to confirm if your location is within our service area.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">❓ How long does a typical repair take?</h4>
+                <p style="color: #666; margin-top: 1rem; display: none;">Most repairs take between 1-3 hours depending on the problem. Complex issues may take longer. We'll provide an estimate before starting work.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">❓ Do you offer warranty on repairs?</h4>
+                <p style="color: #666; margin-top: 1rem; display: none;">Yes! We offer 30 days to 1 year warranty depending on the service type and parts used. Ask our technician for warranty details.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">❓ What payment methods do you accept?</h4>
+                <p style="color: #666; margin-top: 1rem; display: none;">We accept cash, UPI, debit cards, credit cards, and online transfers. Payment is due after the service is completed.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">❓ How can I book a service?</h4>
+                <p style="color: #666; margin-top: 1rem; display: none;">You can book through our booking form above, call us at 6369529001, or message us on WhatsApp. We'll confirm your appointment within 30 minutes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         STICKY BUTTONS
+         ============================================ -->
+    <div class="sticky-buttons">
+        <button class="sticky-btn call-btn" title="Call Us">☎️</button>
+        <button class="sticky-btn whatsapp-btn" title="WhatsApp Us">💬</button>
+        <button class="sticky-btn scroll-top-btn hidden" title="Scroll to Top">⬆️</button>
+    </div>
+
+    <!-- ============================================ 
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 10L35 15V25C35 32 25 40 25 40C25 40 15 32 15 25V15L25 10Z" fill="white"/>
+                    <circle cx="25" cy="22" r="4" fill="#003D7A"/>
+                </svg>
+                <h4>Shree Air Cons</h4>
+                <p>Professional appliance repair services serving Chennai and surrounding areas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">AC Repair & Installation</a></li>
+                    <li><a href="services.html">Washing Machine Service</a></li>
+                    <li><a href="services.html">Refrigerator Repair</a></li>
+                    <li><a href="services.html">Annual Maintenance</a></li>
+                    <li><a href="contact.html">Book Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><strong>📞 Phone:</strong><br>6369529001, 9342017154</p>
+                <p><strong>📍 Address:</strong><br>No 2 Rajiv Gandhi Street, Varadharajapuram, Chennai – 600123</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Shree Air Cons. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/apiClient.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

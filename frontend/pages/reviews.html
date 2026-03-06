@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reviews - Shree Air Cons - Customer reviews and ratings">
+    <title>Reviews - Shree Air Cons</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ============================================ 
+         HEADER & NAVIGATION
+         ============================================ -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-section">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Shree Air Cons Logo" class="logo-icon">
+            </a>
+            <span class="company-name">SAC</span>
+           </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html" class="active">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            
+        </nav>
+    </header>
+
+    <!-- ============================================ 
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" style="min-height: 60vh; padding: 3rem 2rem;">
+        <h1 style="color: white;">Customer Reviews</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-top: 1rem;">What Our Customers Say About Us</p>
+    </section>
+
+    <!-- ============================================ 
+         REVIEWS SECTION
+         ============================================ -->
+    <section>
+        <h2>Share Your Experience</h2>
+        <p class="subtitle">Your feedback helps us improve our services</p>
+
+        <div class="reviews-container">
+            <!-- REVIEW FORM -->
+            <div class="review-form">
+                <form id="reviewForm" onsubmit="submitReview(event)">
+                    <h3>Write a Review</h3>
+
+                    <div class="form-group">
+                        <label for="reviewName">Your Name *</label>
+                        <input type="text" id="reviewName" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rating *</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="hidden" id="ratingValue" name="rating" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review *</label>
+                        <textarea id="reviewMessage" name="message" rows="5" required placeholder="Tell us about your experience with our service..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Review</button>
+                    <small style="display: block; margin-top: 1rem; color: #999;">Your review will be published after admin approval.</small>
+                </form>
+            </div>
+
+            <!-- REVIEWS LIST -->
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-blue);">Approved Reviews</h3>
+                <div class="reviews-list" id="reviewsList">
+                    <!-- Reviews will be loaded here -->
+                </div>
+                <div id="noReviews" style="text-align: center; padding: 2rem; color: #999;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">⭐</div>
+                    <p>No reviews yet. Be the first to share your experience!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         STATS SECTION
+         ============================================ -->
+    <section style="background: var(--light-gray);">
+        <h2>Customer Satisfaction</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto;">
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 0.5rem;" id="avgRating">4.8</div>
+                <p style="color: #999; margin-bottom: 0.5rem;">Average Rating</p>
+                <div style="color: #FFD700;">★★★★★</div>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 0.5rem;" id="totalReviews">0</div>
+                <p style="color: #999;">Total Reviews</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 0.5rem;">98%</div>
+                <p style="color: #999;">Customer Satisfaction</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 0.5rem;">500+</div>
+                <p style="color: #999;">Happy Customers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         STICKY BUTTONS
+         ============================================ -->
+    <div class="sticky-buttons">
+        <button class="sticky-btn call-btn" title="Call Us">☎️</button>
+        <button class="sticky-btn whatsapp-btn" title="WhatsApp Us">💬</button>
+        <button class="sticky-btn scroll-top-btn hidden" title="Scroll to Top">⬆️</button>
+    </div>
+
+    <!-- ============================================ 
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 10L35 15V25C35 32 25 40 25 40C25 40 15 32 15 25V15L25 10Z" fill="white"/>
+                    <circle cx="25" cy="22" r="4" fill="#003D7A"/>
+                </svg>
+                <h4>Shree Air Cons</h4>
+                <p>Professional appliance repair services serving Chennai and surrounding areas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">AC Repair & Installation</a></li>
+                    <li><a href="services.html">Washing Machine Service</a></li>
+                    <li><a href="services.html">Refrigerator Repair</a></li>
+                    <li><a href="services.html">Annual Maintenance</a></li>
+                    <li><a href="contact.html">Book Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><strong>📞 Phone:</strong><br>6369529001, 9342017154</p>
+                <p><strong>📍 Address:</strong><br>No 2 Rajiv Gandhi Street, Varadharajapuram, Chennai – 600123</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Shree Air Cons. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/apiClient.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/reviews.js"></script>
+</body>
+</html>

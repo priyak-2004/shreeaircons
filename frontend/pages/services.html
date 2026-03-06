@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Services - Shree Air Cons - AC, Washing Machine, and Refrigerator Repair">
+    <title>Services - Shree Air Cons</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ============================================ 
+         HEADER & NAVIGATION
+         ============================================ -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-section">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Shree Air Cons Logo" class="logo-icon">
+            </a>
+            <span class="company-name">SAC</span>
+          </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            
+        </nav>
+    </header>
+
+    <!-- ============================================ 
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" style="min-height: 60vh; padding: 3rem 2rem;">
+        <h1 style="color: white;">Our Services</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-top: 1rem;">Professional Repair Services for All Your Home Appliances</p>
+    </section>
+
+    <!-- ============================================ 
+         SERVICES SECTION
+         ============================================ -->
+    <section>
+        <h2>Our Service Categories</h2>
+        <p class="subtitle">Click on any service to learn more details</p>
+        
+        <div class="services-container" id="servicesContainer">
+            <!-- AC Services Card -->
+            <div class="service-card" id="acCard">
+                <svg class="service-card-image" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="acGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#E8F4F8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="300" fill="url(#acGradient)"/>
+                    <!-- AC Unit -->
+                    <rect x="80" y="80" width="240" height="140" fill="#FFFFFF" stroke="#003D7A" stroke-width="3" rx="10"/>
+                    <!-- Display -->
+                    <rect x="100" y="95" width="160" height="40" fill="#E0E0E0" rx="5"/>
+                    <text x="180" y="120" text-anchor="middle" fill="#003D7A" font-size="24" font-weight="bold">24°C</text>
+                    <!-- Vents -->
+                    <rect x="100" y="145" width="160" height="15" fill="#003D7A" rx="3"/>
+                    <rect x="105" y="150" width="8" height="5" fill="#E8F4F8"/>
+                    <rect x="140" y="150" width="8" height="5" fill="#E8F4F8"/>
+                    <rect x="175" y="150" width="8" height="5" fill="#E8F4F8"/>
+                    <rect x="210" y="150" width="8" height="5" fill="#E8F4F8"/>
+                    <rect x="245" y="150" width="8" height="5" fill="#E8F4F8"/>
+                    <!-- Airflow -->
+                    <path d="M 120 170 Q 125 160, 130 170" stroke="#1E90FF" stroke-width="2" fill="none"/>
+                    <path d="M 170 170 Q 175 160, 180 170" stroke="#1E90FF" stroke-width="2" fill="none"/>
+                    <path d="M 220 170 Q 225 160, 230 170" stroke="#1E90FF" stroke-width="2" fill="none"/>
+                    <!-- Technician icon -->
+                    <circle cx="330" cy="200" r="35" fill="#FF6B35" opacity="0.2"/>
+                    <circle cx="330" cy="170" r="12" fill="#FF6B35"/>
+                    <rect x="318" y="185" width="24" height="20" fill="#FF6B35" rx="3"/>
+                </svg>
+                <div class="service-card-content">
+                    <h3>❄️ Air Conditioning</h3>
+                    <p>Complete AC repair, installation, and maintenance services for residential and commercial needs.</p>
+                    <button class="btn btn-primary" onclick="toggleACDetails()">View Services →</button>
+                    
+                    <div class="ac-details" id="acDetails">
+                        <h4>AC Services Include:</h4>
+                        <ul>
+                            <li>AC Repair & Troubleshooting</li>
+                            <li>AC Installation</li>
+                            <li>Filter Replacement</li>
+                            <li>Preventive Maintenance</li>
+                            <li>HVAC Repair</li>
+                            <li>Thermostat Installation</li>
+                            <li>Residential AC Service</li>
+                            <li>Portable AC Service</li>
+                            <li>AC Sales & Consultation</li>
+                            <li>Annual Maintenance Plans</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Washing Machine Card -->
+            <div class="service-card">
+                <svg class="service-card-image" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="wmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#E8F4F8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="300" fill="url(#wmGradient)"/>
+                    <!-- Washing Machine Body -->
+                    <rect x="80" y="60" width="240" height="200" fill="#FFFFFF" stroke="#003D7A" stroke-width="3" rx="10"/>
+                    <!-- Drum -->
+                    <circle cx="200" cy="140" r="70" fill="#E0E0E0" stroke="#003D7A" stroke-width="3"/>
+                    <!-- Drum holes -->
+                    <circle cx="160" cy="110" r="4" fill="#003D7A"/>
+                    <circle cx="200" cy="95" r="4" fill="#003D7A"/>
+                    <circle cx="240" cy="110" r="4" fill="#003D7A"/>
+                    <circle cx="250" cy="140" r="4" fill="#003D7A"/>
+                    <circle cx="240" cy="170" r="4" fill="#003D7A"/>
+                    <circle cx="200" cy="185" r="4" fill="#003D7A"/>
+                    <circle cx="160" cy="170" r="4" fill="#003D7A"/>
+                    <circle cx="150" cy="140" r="4" fill="#003D7A"/>
+                    <!-- Control panel -->
+                    <rect x="110" y="220" width="180" height="30" fill="#E0E0E0" rx="5"/>
+                    <circle cx="140" cy="235" r="5" fill="#003D7A"/>
+                    <circle cx="170" cy="235" r="5" fill="#003D7A"/>
+                    <circle cx="200" cy="235" r="5" fill="#003D7A"/>
+                    <circle cx="230" cy="235" r="5" fill="#003D7A"/>
+                    <circle cx="260" cy="235" r="5" fill="#003D7A"/>
+                </svg>
+                <div class="service-card-content">
+                    <h3>🧺 Washing Machines</h3>
+                    <p>Expert repair and maintenance services for all washing machine brands and models.</p>
+                    <button class="btn btn-primary" onclick="toggleWMDetails()">View Services →</button>
+                    
+                    <div class="wm-details" id="wmDetails">
+                        <h4>Washing Machine Services Include:</h4>
+                        <ul>
+                            <li><strong>Installation Services:</strong> Professional setup and installation of new washing machines</li>
+                            <li><strong>Cleaning Services:</strong> Deep cleaning of drum, filter, and internal components</li>
+                            <li><strong>Maintenance Services:</strong> Regular maintenance and preventive care</li>
+                            <li>Repair & Troubleshooting - All brands and models</li>
+                            <li>Drain Pipe Cleaning</li>
+                            <li>Seal & Gasket Replacement</li>
+                            <li>Motor Repair & Replacement</li>
+                            <li>Control Panel Issues</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Refrigerator Card -->
+            <div class="service-card">
+                <svg class="service-card-image" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="fridgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#E8F4F8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="300" fill="url(#fridgeGradient)"/>
+                    <!-- Fridge Body -->
+                    <rect x="100" y="50" width="200" height="230" fill="#CCCCCC" stroke="#003D7A" stroke-width="3" rx="10"/>
+                    <!-- Top section (Freezer) -->
+                    <rect x="110" y="65" width="180" height="70" fill="#E8F4F8" stroke="#003D7A" stroke-width="2" rx="5"/>
+                    <!-- Freezer handle -->
+                    <line x1="280" y1="85" x2="290" y2="85" stroke="#003D7A" stroke-width="3"/>
+                    <line x1="290" y1="85" x2="290" y2="115" stroke="#003D7A" stroke-width="3"/>
+                    <!-- Bottom section (Fridge) -->
+                    <rect x="110" y="145" width="180" height="115" fill="#E8F4F8" stroke="#003D7A" stroke-width="2" rx="5"/>
+                    <!-- Fridge handle -->
+                    <line x1="280" y1="165" x2="290" y2="165" stroke="#003D7A" stroke-width="3"/>
+                    <line x1="290" y1="165" x2="290" y2="225" stroke="#003D7A" stroke-width="3"/>
+                    <!-- Cold effect -->
+                    <text x="150" y="100" font-size="32">❄️</text>
+                    <text x="200" y="180" font-size="32">🧊</text>
+                </svg>
+                <div class="service-card-content">
+                    <h3>🧊 Refrigerators</h3>
+                    <p>Complete refrigerator repair, maintenance, and troubleshooting services.</p>
+                    <button class="btn btn-primary" onclick="toggleRefrigDetails()">View Services →</button>
+                    
+                    <div class="refrig-details" id="refrigDetails">
+                        <h4>Refrigerator Services Include:</h4>
+                        <ul>
+                            <li><strong>Installation Services:</strong> Professional setup and installation of new refrigerators</li>
+                            <li><strong>Cleaning Services:</strong> Interior and exterior cleaning, coil cleaning</li>
+                            <li><strong>Maintenance Services:</strong> Regular maintenance and temperature optimization</li>
+                            <li>Refrigerant Recharge & Leak Repair</li>
+                            <li>Compressor Repair & Replacement</li>
+                            <li>Condenser Cleaning</li>
+                            <li>Thermostat Issues</li>
+                            <li>Door Seal Replacement</li>
+                            <li>Icemaker & Water Dispenser Repair</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         PROCESS SECTION
+         ============================================ -->
+    <section style="background: var(--light-gray);">
+        <h2>Our Service Process</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1200px; margin: 2rem auto;">
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-blue);">📞</div>
+                <h3>1. Contact Us</h3>
+                <p>Call us or use the booking form to schedule your service</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--secondary-blue);">✓</div>
+                <h3>2. Confirmation</h3>
+                <p>We confirm your appointment and send you all details</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-orange);">🔧</div>
+                <h3>3. Service</h3>
+                <p>Our technician arrives and diagnoses and repairs your appliance</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #28a745;">💳</div>
+                <h3>4. Payment</h3>
+                <p>Pay for the service upon completion with warranty</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         PRICING SECTION
+         ============================================ -->
+    <section>
+        <h2>Service Plans</h2>
+        <p class="subtitle">Flexible pricing options for your convenience</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto;">
+            <div style="background: var(--light-blue); padding: 2rem; border-radius: 10px 10px 25px 25px; border-top: 5px solid var(--secondary-blue); text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Basic Service</h3>
+                <p style="font-size: 0.9rem; color: #666;">For single repairs</p>
+                <div style="font-size: 2rem; color: var(--accent-orange); margin: 1rem 0; font-weight: bold;">₹299+</div>
+                <ul style="list-style: none; text-align: left; margin: 1rem 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;">✓ Service call charges</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;">✓ Diagnosis</li>
+                    <li style="padding: 0.5rem 0;">✓ 30 days warranty</li>
+                </ul>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'" style="width: 100%;">Book Now</button>
+            </div>
+
+            <div style="background: var(--light-blue); padding: 2rem; border-radius: 10px 10px 25px 25px; border-top: 5px solid var(--accent-orange); text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: scale(1.05);">
+                <div style="background: var(--accent-orange); color: white; padding: 0.5rem 1rem; border-radius: 5px; display: inline-block; margin-bottom: 1rem; font-weight: bold;">POPULAR</div>
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Standard Service</h3>
+                <p style="font-size: 0.9rem; color: #666;">Most common choice</p>
+                <div style="font-size: 2rem; color: var(--accent-orange); margin: 1rem 0; font-weight: bold;">₹599+</div>
+                <ul style="list-style: none; text-align: left; margin: 1rem 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;">✓ All Basic benefits</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;">✓ Parts replacement</li>
+                    <li style="padding: 0.5rem 0;">✓ 6 months warranty</li>
+                </ul>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'" style="width: 100%;">Book Now</button>
+            </div>
+
+            <div style="background: var(--light-blue); padding: 2rem; border-radius: 10px 10px 25px 25px; border-top: 5px solid var(--secondary-blue); text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Annual Maintenance</h3>
+                <p style="font-size: 0.9rem; color: #666;">Best value plan</p>
+                <div style="font-size: 2rem; color: var(--accent-orange); margin: 1rem 0; font-weight: bold;">₹2999/yr</div>
+                <ul style="list-style: none; text-align: left; margin: 1rem 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;">✓ 4 services included</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;">✓ Priority support</li>
+                    <li style="padding: 0.5rem 0;">✓ 1 year warranty</li>
+                </ul>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'" style="width: 100%;">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ 
+         STICKY BUTTONS
+         ============================================ -->
+    <div class="sticky-buttons">
+        <button class="sticky-btn call-btn" title="Call Us">☎️</button>
+        <button class="sticky-btn whatsapp-btn" title="WhatsApp Us">💬</button>
+        <button class="sticky-btn scroll-top-btn hidden" title="Scroll to Top">⬆️</button>
+    </div>
+
+    <!-- ============================================ 
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 10L35 15V25C35 32 25 40 25 40C25 40 15 32 15 25V15L25 10Z" fill="white"/>
+                    <circle cx="25" cy="22" r="4" fill="#003D7A"/>
+                </svg>
+                <h4>Shree Air Cons</h4>
+                <p>Professional appliance repair services serving Chennai and surrounding areas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">AC Repair & Installation</a></li>
+                    <li><a href="services.html">Washing Machine Service</a></li>
+                    <li><a href="services.html">Refrigerator Repair</a></li>
+                    <li><a href="services.html">Annual Maintenance</a></li>
+                    <li><a href="contact.html">Book Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><strong>📞 Phone:</strong><br>6369529001, 9342017154</p>
+                <p><strong>📍 Address:</strong><br>No 2 Rajiv Gandhi Street, Varadharajapuram, Chennai – 600123</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Shree Air Cons. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/apiClient.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        function toggleACDetails() {
+            const details = document.getElementById('acDetails');
+            details.classList.toggle('show');
+        }
+        
+        function toggleWMDetails() {
+            const details = document.getElementById('wmDetails');
+            details.classList.toggle('show');
+        }
+        
+        function toggleRefrigDetails() {
+            const details = document.getElementById('refrigDetails');
+            details.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
