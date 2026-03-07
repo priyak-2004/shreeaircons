@@ -1123,6 +1123,8 @@ footer {
     nav ul {
         gap: 1rem;
         font-size: 0.9rem;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .hamburger {
@@ -1139,6 +1141,7 @@ footer {
         padding: 1rem;
         display: none;
         gap: 1rem;
+        align-items: flex-start;
     }
 
     nav.active {
