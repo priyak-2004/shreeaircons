@@ -1114,44 +1114,49 @@ footer {
 /* ============================================ 
    RESPONSIVE DESIGN
    ============================================ */
+  @media (max-width:768px){
 
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0 1rem;
-    }
+   .navbar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    padding:0 1rem;
+}
 
-    nav ul {
-        gap: 1rem;
-        font-size: 0.9rem;
-        align-items: flex-start;
-        text-align: left;
-    }
+.hamburger{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    left:15px;
+    cursor:pointer;
+}
 
-    .hamburger {
-        display: flex;
-    }
+.nav-menu{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:var(--primary-blue);
+    display:none;
+    flex-direction:column;
+    padding:20px;
+}
 
-    nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--primary-blue);
-        flex-direction: column;
-        padding: 1rem;
-        display: none;
-        gap: 1rem;
-        align-items: flex-start;
-    }
+.nav-menu.active{
+    display:flex;
+}
 
-    nav.active {
-        display: flex;
-    }
+.nav-menu li{
+    padding:10px 0;
+}
+.nav-menu li a{
+    display:block;
+    width:100%;
+}
+  
 
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
+
 
     .hero h1 {
         font-size: 2rem;

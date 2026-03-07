@@ -4,8 +4,8 @@
 
 // DOM Elements (with null checks for elements that don't exist on all pages)
 const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
-const navLinks = document.querySelectorAll('nav a');
+const nav = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-menu a');
 const scrollTopBtn = document.querySelector('.scroll-top-btn');
 const callBtn = document.querySelector('.call-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
